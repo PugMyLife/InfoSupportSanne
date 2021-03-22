@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import {CursusService} from './shared/cursusoverzicht/cursusoverzicht.service'
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AngularInfoSupport';
+
+  constructor(public cursusService: CursusService){}
+  ngOnInit(): void{
+    this.cursusService.fetchCursus();
+  }
 }
+
+
+

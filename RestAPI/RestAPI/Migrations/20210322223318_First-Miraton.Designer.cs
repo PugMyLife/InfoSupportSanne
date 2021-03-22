@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestAPI.Models;
 
 namespace RestAPI.Migrations
 {
-    [DbContext(typeof(CursusDetailContext))]
-    partial class CursusDetailContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(CursusContext))]
+    [Migration("20210322223318_First-Miraton")]
+    partial class FirstMiraton
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

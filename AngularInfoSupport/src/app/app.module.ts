@@ -1,22 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CursusDetailsComponent } from './cursus-details/cursus-details.component';
-import { CursusDetailUploadComponent } from './cursus-details/cursus-detail-upload/cursus-detail-upload.component';
+import { CommonModule } from '@angular/common';
+import {CursusService} from './shared/cursusoverzicht/cursusoverzicht.service'
 
 @NgModule({
   declarations: [
     AppComponent,
-    CursusDetailsComponent,
-    CursusDetailUploadComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [CursusService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

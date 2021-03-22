@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace RestAPI.Models
 {
-    public class CursusDetailContext:DbContext
+    public class CursusContext:DbContext
     {
-        public CursusDetailContext(DbContextOptions<CursusDetailContext> options) : base(options) { }
+        public CursusContext(DbContextOptions<CursusContext> options) : base(options) { }
 
         public DbSet<CursusDetail>CursusDetails { get; set; }
     }

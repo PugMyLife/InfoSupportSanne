@@ -9,7 +9,7 @@ namespace UnitTests
     public class unitTestsCursusDetails
     {
         [TestMethod]
-        public void CursusIsValid()
+        public void NewCursusIsValid()
         {
             var cursusInput = new CursusDetail
             {
@@ -17,11 +17,10 @@ namespace UnitTests
                 Titel = "EindCase",
                 Code = "EICE"
             };
-            //Act
+
             var validationResults = new List<ValidationResult>();
             var actual = Validator.TryValidateObject(cursusInput, new ValidationContext(cursusInput), validationResults, true);
 
-            //Assert
             Assert.IsTrue(actual, "Expected validation to succeed.");
             Assert.AreEqual(0, validationResults.Count, "Unexpected number of validation errors.");
         }

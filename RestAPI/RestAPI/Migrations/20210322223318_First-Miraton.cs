@@ -2,7 +2,7 @@
 
 namespace RestAPI.Migrations
 {
-    public partial class InitialCreation : Migration
+    public partial class FirstMiraton : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

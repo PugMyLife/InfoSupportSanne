@@ -13,9 +13,9 @@ namespace RestAPI.Controllers
     [ApiController]
     public class CursusDetailsController : ControllerBase
     {
-        private readonly CursusDetailContext _context;
+        private readonly CursusContext _context;
 
-        public CursusDetailsController(CursusDetailContext context)
+        public CursusDetailsController(CursusContext context)
         {
             _context = context;
         }
