@@ -1,12 +1,7 @@
 [
     {
-        "Duur": 1,
-        "Titel": "Angular",
-        "Code": "ANGL"
-    },
-    {
-        "Duur": 5,
-        "Titel": "Eindcase",
-        "Code": "EIND"
-    }
+        "id": 0,
+        "startDatum": "2021-03-23",
+        "cursusDetailId": 5 
+      }
 ]

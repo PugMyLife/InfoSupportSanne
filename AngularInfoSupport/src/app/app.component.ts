@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import {CursusService} from './shared/cursusoverzicht/cursusoverzicht.service'
+import {CursusService} from './shared/cursus/cursus.service'
+import { UploadService } from './shared/upload/upload.service';
 
 
 @Component({
@@ -10,11 +11,9 @@ import {CursusService} from './shared/cursusoverzicht/cursusoverzicht.service'
 })
 export class AppComponent {
 
-  constructor(public cursusService: CursusService){}
+  constructor(public cursusService: CursusService, public uploadService: UploadService ){}
   ngOnInit(): void{
     this.cursusService.fetchCursus();
-  }
+
+  }     
 }
-
-
-
