@@ -18,17 +18,39 @@ namespace UnitTests
             var cursusInput = new CursusInstantie
             {
                 startDatum = new DateTime(2021, 12, 03),
-                cursusDetail = new CursusDetail {
-                    Duur = 3,
-                    Titel = "eindcase",
-                    Code = "EICE" }
             };
 
             var validationResults = new List<ValidationResult>();
             var actual = Validator.TryValidateObject(cursusInput, new ValidationContext(cursusInput), validationResults, true);
 
             Assert.IsTrue(actual, "Expected validation to succeed.");
+            Assert.AreEqual(0, validationResults.Count, "Unexpected number of validation errors.");
+        }
 
+        [TestMethod]
+        public void Instantie_Recognises_DetailKey()
+        {
+            //Arrange
+            var newCursusDetail = new CursusDetail
+            {
+                Id = 1,
+                duur = 3,
+                titel = "eindcase",
+                cursusCode = "EICE"
+            };
+
+            var newCursusInstantie = new CursusInstantie
+            {
+                Id = 1,
+                startDatum = new DateTime(2021, 12, 03),
+                //cursusDetail = new CursusDetail { titel = "eindcase" }
+            };
+
+      
+           // var actualresult = newCursusInstantie.cursusDetail.cursusCode;
+            var expectedresult = newCursusDetail.cursusCode;
+
+            //Assert.AreEqual(expectedresult, actualresult);
         }
     }
 }

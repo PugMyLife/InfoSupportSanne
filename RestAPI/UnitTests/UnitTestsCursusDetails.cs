@@ -13,9 +13,9 @@ namespace UnitTests
         {
             var cursusInput = new CursusDetail
             {
-                Duur = 5,
-                Titel = "EindCase",
-                Code = "EICE"
+                duur = 5,
+                titel = "EindCase",
+                cursusCode = "EICE"
             };
 
             var validationResults = new List<ValidationResult>();

@@ -29,29 +29,29 @@ namespace RestAPI.Controllers
 
         // GET: api/CursusDetails/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<CursusDetail>> GetCursusDetail(string id)
+        public async Task<ActionResult<CursusDetail>> GetCursusDetail(int id)
         {
-            var CursusDetail = await _context.CursusDetails.FindAsync(id);
+            var cursusDetail = await _context.CursusDetails.FindAsync(id);
 
-            if (CursusDetail == null)
+            if (cursusDetail == null)
             {
                 return NotFound();
             }
 
-            return CursusDetail;
+            return cursusDetail;
         }
 
         // PUT: api/CursusDetails/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCursusDetail(string id, CursusDetail CursusDetail)
+        public async Task<IActionResult> PutCursusDetail(int id, CursusDetail cursusDetail)
         {
-            if (id != CursusDetail.Code)
+            if (id != cursusDetail.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(CursusDetail).State = EntityState.Modified;
+            _context.Entry(cursusDetail).State = EntityState.Modified;
 
             try
             {
@@ -75,47 +75,33 @@ namespace RestAPI.Controllers
         // POST: api/CursusDetails
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<CursusDetail>> PostCursusDetail(CursusDetail CursusDetail)
+        public async Task<ActionResult<CursusDetail>> PostCursusDetail(CursusDetail cursusDetail)
         {
-            _context.CursusDetails.Add(CursusDetail);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (CursusDetailExists(CursusDetail.Code))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            _context.CursusDetails.Add(cursusDetail);
+            await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCursusDetail", new { id = CursusDetail.Code }, CursusDetail);
+            return CreatedAtAction("GetCursusDetail", new { id = cursusDetail.Id }, cursusDetail);
         }
 
         // DELETE: api/CursusDetails/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCursusDetail(string id)
+        public async Task<IActionResult> DeleteCursusDetail(int id)
         {
-            var CursusDetail = await _context.CursusDetails.FindAsync(id);
-            if (CursusDetail == null)
+            var cursusDetail = await _context.CursusDetails.FindAsync(id);
+            if (cursusDetail == null)
             {
                 return NotFound();
             }
 
-            _context.CursusDetails.Remove(CursusDetail);
+            _context.CursusDetails.Remove(cursusDetail);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool CursusDetailExists(string id)
+        private bool CursusDetailExists(int id)
         {
-            return _context.CursusDetails.Any(e => e.Code == id);
+            return _context.CursusDetails.Any(e => e.Id == id);
         }
     }
 }

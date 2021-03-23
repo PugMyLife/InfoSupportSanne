@@ -2,14 +2,16 @@
 <table class="table">
   <thead class="thead-light">
       <tr>
-          <th>Code</th>
+          <th>Startdatum</th>
+          <th>Cursuscode</th>
           <th>Naam</th>
           <th>Duur</th>
       </tr>
   </thead>
   <tbody>
       <tr *ngFor="let cursus of cursusService.list">
-          <td>{{cursus.code}}</td>
+          <td>{{cursus.startdatum}}</td>
+          <td>{{cursus.cursusCode}}</td>
           <td>{{cursus.titel}}</td>
           <td>{{cursus.duur}} dagen</td>
       </tr>

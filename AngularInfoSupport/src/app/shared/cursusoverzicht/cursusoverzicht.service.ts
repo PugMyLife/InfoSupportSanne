@@ -8,7 +8,7 @@ export class CursusService{
     constructor(private http: HttpClient){}
     formData: CursusOverzicht = new CursusOverzicht();
     list: CursusOverzicht[];
-    readonly baseURL = 'https://localhost:44357/api/CursusDetails';
+    readonly baseURL = 'https://localhost:44357/api/overzicht';
 
     fetchCursus(){
         return this.http.get(this.baseURL)

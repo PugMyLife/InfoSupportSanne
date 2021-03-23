@@ -1,5 +1,6 @@
 export class CursusOverzicht{
+    startdatum: string='';
     titel: string='';
-    code: string='';
+    cursusCode: string='';
     duur: number=0;
 };
