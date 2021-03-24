@@ -13,7 +13,6 @@ export class AppComponent {
 
   constructor(public cursusService: CursusService, public uploadService: UploadService ){}
   ngOnInit(): void{
-    this.cursusService.fetchCursus();
 
   }     
 }
