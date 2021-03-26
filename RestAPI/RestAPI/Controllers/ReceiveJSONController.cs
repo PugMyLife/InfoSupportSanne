@@ -27,12 +27,12 @@ namespace RestAPI.Controllers
             {
 
 
-                string[] arrContent = Regex.Split(content.Content, @"[\r\n]");
-
+            string[] arrContent = Regex.Split(content.Content, @"[\r\n]");
+ 
                 foreach (string items in arrContent)
                 {
-                Debug.Assert((arrContent.Length % 5) == 0);
-                for (int i = 0; i < arrContent.Length; i += 5) {
+
+                for (int i = 0; i < arrContent.Length-2; i += 5) {
                     var newInstantie = new CursusInstantie
                     {
                         cursusDetail = new CursusDetail()

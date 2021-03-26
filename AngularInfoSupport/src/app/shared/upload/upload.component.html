@@ -3,7 +3,7 @@
     <input type="file" (change)="changeListener($event)">
   </div>
   
-<button type="button" class="btn btn-success"(click)="sendData()">
+<button type="button" class="btn btn-success"(click)="sendData()" onclick="setTimeout('history.go(0);',2000);" value="Refresh">
     Send Post Command
 </button> 
 

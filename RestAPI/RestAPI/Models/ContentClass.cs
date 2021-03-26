@@ -8,11 +8,5 @@ namespace RestAPI.Models
     public class ContentClass
     {
         public string Content { get; set; }
-        public string[] arrContent()
-        {
-            return this.Content.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-        }
-
-
     }
 }

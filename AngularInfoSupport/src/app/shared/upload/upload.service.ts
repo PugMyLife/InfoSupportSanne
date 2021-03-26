@@ -11,30 +11,16 @@ export class UploadService{
       'Content-Type': 'application/json' 
   }
 
-    posturl: string = `https://localhost:44357/api/CursusDetails`;
-    posturl2: string =`https://localhost:44357/api/ReceiveJSON`
+    posturl: string =`https://localhost:44357/api/ReceiveJSON`
     json;
-    fileData2;
-    fileData = {
-            "id": 0,
-            "duur": 5,
-            "titel": "TestTitel",
-            "cursusCode": "TestCode",
-            "cursusInstanties": [
-              {
-                "id": 0,
-                "startDatum": "2025-12-03",
-                "cursusDetailId": 0
-              }
-            ]
-    }
+    fileData;
     sendFile(){
-      let stringFileData = String(this.fileData2)
+      let stringFileData = String(this.fileData)
       let stringifiedFileData = JSON.stringify({content: stringFileData});
       let headersoptions = new HttpHeaders({'Content-Type': 'text/json'});
       let options = {headers: headersoptions}
-      console.log(this.fileData2);
-        return this.http.post(this.posturl2, stringifiedFileData, options).subscribe(result => {
+      console.log(this.fileData);
+        return this.http.post(this.posturl, stringifiedFileData, options).subscribe(result => {
         alert(result);
         }, error => console.error(error));
     }  
@@ -45,7 +31,7 @@ export class UploadService{
       var myReader:FileReader = new FileReader();
   
       myReader.onloadend = (e) => {
-       this.fileData2 = myReader.result
+       this.fileData = myReader.result
       }
   
       myReader.readAsText(file);

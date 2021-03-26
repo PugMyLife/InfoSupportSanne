@@ -8,4 +8,13 @@ using System.Threading.Tasks;
 
 namespace UnitTests
 {
+    public class MockContentClass
+    {
+        public string Content { get; set; }
+        public string[] arrContent()
+        {
+            return Regex.Split(this.Content, @"[\r\n]");
+
+        }
+    }
 }
