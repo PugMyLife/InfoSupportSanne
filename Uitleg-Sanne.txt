@@ -1,0 +1,5 @@
+Context over mijn werk:
+WebAPI 
+1. Hoewel de data volledig wordt ingeladen en de string wordt opgesplitst in diverse Array elementen heb ik het niet voor elkaar gekregen om de string betreft de datum om te zetten naar een echte DateTime. Vandaar de placeholder.
+Angular
+1. De sorting Pipe. Omdat ik geen werkende DateTime elementen heb werkt de sortering op datum ook (nog) niet. In de HTML kun je eenvoudig de sort aanpassen naar bijvoorbeeld de naam. Je zal dan zien dat sort werkt. 
