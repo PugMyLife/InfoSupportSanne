@@ -35,13 +35,14 @@ namespace RestAPI.Controllers
                 for (int i = 0; i < arrContent.Length-2; i += 5) {
                     var newInstantie = new CursusInstantie
                     {
+                        startDatum = DateTime.Parse(Regex.Match(arrContent[i + 3], @"\d{2}:\d{2}:\d{4}").Value),
                         cursusDetail = new CursusDetail()
                         {
                             titel = arrContent[i+0],
                             cursusCode = arrContent[i+1],
-                            duur = 8
-
+                            duur = int.Parse(Regex.Match(arrContent[i+2], @"\d+").Value)
                         }
+                        
                     };
 
 
