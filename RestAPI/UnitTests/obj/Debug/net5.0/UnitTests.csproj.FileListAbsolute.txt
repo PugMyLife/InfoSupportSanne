@@ -232,3 +232,5 @@ C:\Users\saboo\source\repos\InfoSupportSanne\InfoSupportSanne\RestAPI\UnitTests\
 C:\Users\saboo\source\repos\InfoSupportSanne\InfoSupportSanne\RestAPI\UnitTests\obj\Debug\net5.0\UnitTests.dll
 C:\Users\saboo\source\repos\InfoSupportSanne\InfoSupportSanne\RestAPI\UnitTests\obj\Debug\net5.0\ref\UnitTests.dll
 C:\Users\saboo\source\repos\InfoSupportSanne\InfoSupportSanne\RestAPI\UnitTests\obj\Debug\net5.0\UnitTests.pdb
+C:\Users\saboo\source\repos\InfoSupportSanne\InfoSupportSanne\RestAPI\UnitTests\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\saboo\source\repos\InfoSupportSanne\InfoSupportSanne\RestAPI\UnitTests\bin\Debug\net5.0\Moq.dll

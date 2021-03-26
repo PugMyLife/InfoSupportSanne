@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes } from '@angular/router';
 import { CursusComponent } from './shared/cursus/cursus.component';
 import { UploadComponent } from './shared/upload/upload.component';
+import { SortByPipe } from './pipes/sort.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: CursusComponent },
@@ -20,7 +21,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CursusComponent,
-    UploadComponent
+    UploadComponent,
+    SortByPipe
 
   ],
   imports: [

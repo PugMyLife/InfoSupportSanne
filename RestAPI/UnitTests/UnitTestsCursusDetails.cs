@@ -15,8 +15,10 @@ namespace UnitTests
             {
                 duur = 5,
                 titel = "EindCase",
-                cursusCode = "EICE"
+                cursusCode = "EICE",
+                cursusInstanties = new List<CursusInstantie>()
             };
+
 
             var validationResults = new List<ValidationResult>();
             var actual = Validator.TryValidateObject(cursusInput, new ValidationContext(cursusInput), validationResults, true);

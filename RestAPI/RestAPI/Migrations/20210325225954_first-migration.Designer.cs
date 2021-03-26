@@ -10,8 +10,8 @@ using RestAPI.Models;
 namespace RestAPI.Migrations
 {
     [DbContext(typeof(CursusContext))]
-    [Migration("20210324084029_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20210325225954_first-migration")]
+    partial class firstmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

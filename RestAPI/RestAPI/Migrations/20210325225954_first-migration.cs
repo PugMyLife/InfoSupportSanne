@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RestAPI.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class firstmigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,9 +13,9 @@ namespace RestAPI.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    duur = table.Column<int>(type: "int", nullable: false),
                     titel = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
-                    cursusCode = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    cursusCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    duur = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

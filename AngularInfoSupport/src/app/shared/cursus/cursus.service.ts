@@ -14,7 +14,7 @@ export class CursusService{
         return this.http.get(this.baseURL)
         .toPromise()
         .then(res => this.list = res as CursusOverzicht[]);
-        console.log('het werkt');
     }
+
 }
 

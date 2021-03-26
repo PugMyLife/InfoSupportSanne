@@ -13,5 +13,6 @@ export class CursusComponent {
   constructor(public cursusService: CursusService){}
   ngOnInit(): void{
     this.cursusService.fetchCursus();
-  }     
+  }
 }
+
