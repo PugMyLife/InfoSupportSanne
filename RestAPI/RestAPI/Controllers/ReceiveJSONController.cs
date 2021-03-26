@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace RestAPI.Controllers
 {
@@ -14,24 +15,43 @@ namespace RestAPI.Controllers
     [ApiController]
     public class ReceiveJSONController : ControllerBase
     {
-        // POST: api/CursusDetails
-        [HttpPost]
-        public string JsonStringBody(ContentClass content)
+        public CursusContext context;
+        public static CursusInstantie model;
+        public ReceiveJSONController(CursusContext cursusContext)
         {
-            foreach (string items in content.arrContent())
+            this.context = cursusContext;
+        }
+            // POST: api/CursusDetails
+            [HttpPost]
+            public string JsonStringBody(ContentClass content)
             {
-                SqlConnection con = new SqlConnection("Data Source = .\\sqlexpress;initial catalog=InfoSupportDb;integrated security=true;");
-                con.Open();
-                var mycommand = new SqlCommand("INSERT INTO dbo.CursusDetails VALUES(@titel, @cursusCode, @duur)", con);
-                //var my2ndcommand = new SqlCommand("INSERT INTO dbo.CursusInstanties VALUES(@startDatum, @cursusDetailId)", con);
-                mycommand.Parameters.AddWithValue("@titel", items[0]);
-                mycommand.Parameters.AddWithValue("@cursusCode", "ABC");
-                mycommand.Parameters.AddWithValue("@duur", 1);
-                mycommand.ExecuteNonQuery();
-                con.Close();
-            }
 
+
+                string[] arrContent = Regex.Split(content.Content, @"[\r\n]");
+
+                foreach (string items in arrContent)
+                {
+                Debug.Assert((arrContent.Length % 5) == 0);
+                for (int i = 0; i < arrContent.Length; i += 5) {
+                    var newInstantie = new CursusInstantie
+                    {
+                        cursusDetail = new CursusDetail()
+                        {
+                            titel = arrContent[i+0],
+                            cursusCode = arrContent[i+1],
+                            duur = 8
+
+                        }
+                    };
+
+
+                    context.Add(newInstantie);
+                    context.SaveChanges();
+                }
+            }
+                
             return content.Content;
+            }
         }
     }
-}
+

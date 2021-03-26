@@ -9,26 +9,10 @@
         </tr>
     </thead>
     <tbody id="sortByStartDatum">
-        <tr *ngFor="let cursus of cursusService.list | sortBy:'titel'">
+        <tr *ngFor="let cursus of cursusService.list | sortBy'asc':'startdatum'asc">
             <td>{{cursus.startdatum | date: 'dd/MM/yyyy'}}</td>
             <td>{{cursus.cursusCode}}</td>
             <td>{{cursus.titel}}</td>
             <td>{{cursus.duur}} dagen</td>
         </tr>
     </tbody>
-    <!-- <tbody id="sortByCursusCode">
-        <tr *ngFor="let cursus of cursusService.list | sortBy:'cursusCode'">
-            <td>{{cursus.startdatum | date: 'dd/MM/yyyy'}}</td>
-            <td>{{cursus.cursusCode}}</td>
-            <td>{{cursus.titel}}</td>
-            <td>{{cursus.duur}} dagen</td>
-        </tr>
-    </tbody>
-    <tbody id="sortByTitel">
-        <tr *ngFor="let cursus of cursusService.list | sortBy:'titel'">
-            <td>{{cursus.startdatum | date: 'dd/MM/yyyy'}}</td>
-            <td>{{cursus.cursusCode}}</td>
-            <td>{{cursus.titel}}</td>
-            <td>{{cursus.duur}} dagen</td>
-        </tr>
-    </tbody> -->

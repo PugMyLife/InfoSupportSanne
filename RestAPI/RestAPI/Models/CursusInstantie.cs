@@ -11,8 +11,6 @@ namespace RestAPI.Models
     public class CursusInstantie
     {
         public int Id { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd-mm-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime startDatum { get; set; }
         [ForeignKey("CursusDetail")]
         public int cursusDetailId { get; set; }

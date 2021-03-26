@@ -40,24 +40,5 @@ Startdatum: 22/03/2021
 
             CollectionAssert.AreEqual(actualresult, expectedresult);
         }
-
-        [TestMethod]
-        public void MockCursusInsert()
-        {
-            var CursusDetail = new Mock<CursusDetail>();
-            var seperateInit = new ContentClass
-            {
-                Content = @"Titel: Object Oriented Programming in C# By Example 
-Cursuscode: OOCS
-Duur: 5 dagen
-Startdatum: 22/03/2021
-
-Titel: LINQ: .NET Language-Integrated Query
-Cursuscode: LINQ
-Duur: 2 dagen
-Startdatum: 22/03/2021
-"
-            };
-        }
     }
 }
